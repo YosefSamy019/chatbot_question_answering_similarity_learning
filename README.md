@@ -8,6 +8,27 @@ It supports multiple architectures with **LSTMs** and **Attention layers**, and 
 
 ---
 
+## 🌐 Live Demo (Streamlit App)
+
+We deployed an interactive **Streamlit web app** to test the chatbot intent embeddings in real time.  
+You can try it here:  
+
+🔗 [Open the App](https://chatbotquestionansweringsimilaritylearning-wmudhfvxj5fdklehs4g.streamlit.app/)
+
+### ✨ Features
+- Enter any **user query**.
+- The model extracts its **embedding (latent space)**.
+- A **KNN (k=3)** classifier retrieves the most relevant intent tag.
+- The system then provides a **suitable response** from the dataset.
+
+📌 Example Flow:
+1. Input: `"hey there"`
+2. Model → embedding → nearest neighbors
+3. Predicted tag: `"greeting"`
+4. Output response: `"Hi there! What can I do for you today?"`
+
+---
+
 ## 📂 Directory Structure
 
 ```

@@ -92,31 +92,40 @@ with tab1:
     st.header("Ask the Chatbot")
     user_input = st.text_input("Enter your question:")
 
-    if st.button("Get Answer", key="btn_chat"):
+    # Initialize busy flag
+    if "busy" not in st.session_state:
+        st.session_state.busy = False
+
+    if st.button("Get Answer", key="btn_chat") and not st.session_state.busy:
         if user_input.strip():
-            # Clean & preprocess
-            cleaned = process_pattern(user_input)
-            seq = x_tokenizer.texts_to_sequences([cleaned])
-            seq = pad_sequences(seq, maxlen=SENTENCE_MAX_WORDS_LEN, padding="post", truncating="post")
+            st.session_state.busy = True  # lock
+            try:
+                # Clean & preprocess
+                cleaned = process_pattern(user_input)
+                seq = x_tokenizer.texts_to_sequences([cleaned])
+                seq = pad_sequences(seq, maxlen=SENTENCE_MAX_WORDS_LEN, padding="post", truncating="post")
 
-            recovered_txt = list(map(lambda x: x_tokenizer.word_index[x] , seq[0]))
+                recovered_txt = " ".join([x_tokenizer.index_word.get(idx, "") for idx in seq[0] if idx != 0])
 
-            # Get embedding
-            embedding = feature_extractor.predict(seq, verbose=0)
+                # Predict with spinner
+                with st.spinner("Thinking..."):
+                    embedding = feature_extractor.predict(seq, verbose=0)
 
-            # Predict class using KNN
-            predicted_tag = knn.predict(embedding)[0]
+                # Predict class using KNN
+                predicted_tag = knn.predict(embedding)[0]
 
-            # Select random suitable response
-            possible_responses = data_df[data_df["tag"] == predicted_tag]["response"].values
-            if len(possible_responses) > 0:
-                answer = random.choice(possible_responses)
-            else:
-                answer = "Sorry, I don’t have an answer for that."
+                # Select random suitable response
+                possible_responses = data_df[data_df["tag"] == predicted_tag]["response"].values
+                if len(possible_responses) > 0:
+                    answer = random.choice(possible_responses)
+                else:
+                    answer = "Sorry, I don’t have an answer for that."
 
-            st.markdown(f"**Predicted Tag:** {predicted_tag}")
-            st.markdown(f"**Cleaned Question:** {recovered_txt}")
-            st.markdown(f"**Answer:** {answer}")
+                st.markdown(f"**Predicted Tag:** {predicted_tag}")
+                st.markdown(f"**Cleaned Question:** {recovered_txt}")
+                st.markdown(f"**Answer:** {answer}")
+            finally:
+                st.session_state.busy = False  # release lock
         else:
             st.warning("Please enter some text.")
 

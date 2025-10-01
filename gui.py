@@ -99,6 +99,8 @@ with tab1:
             seq = x_tokenizer.texts_to_sequences([cleaned])
             seq = pad_sequences(seq, maxlen=SENTENCE_MAX_WORDS_LEN, padding="post", truncating="post")
 
+            recovered_txt = list(map(lambda x: x_tokenizer.word_index[x] , seq[0]))
+
             # Get embedding
             embedding = feature_extractor.predict(seq, verbose=0)
 
@@ -113,6 +115,7 @@ with tab1:
                 answer = "Sorry, I don’t have an answer for that."
 
             st.markdown(f"**Predicted Tag:** {predicted_tag}")
+            st.markdown(f"**Cleaned Question:** {recovered_txt}")
             st.markdown(f"**Answer:** {answer}")
         else:
             st.warning("Please enter some text.")

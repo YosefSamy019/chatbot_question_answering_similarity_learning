@@ -14,6 +14,7 @@ We deployed an interactive **Streamlit web app** to test the chatbot intent embe
 You can try it here:  
 
 🔗 [Open the App](https://chatbotquestionansweringsimilaritylearning-wmudhfvxj5fdklehs4g.streamlit.app/)
+* ![](assets/img_10.png)
 
 ### ✨ Features
 - Enter any **user query**.

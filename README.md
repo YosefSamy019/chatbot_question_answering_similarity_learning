@@ -71,7 +71,7 @@ data_df.head()
 ```python
 print(X[124])   # Example tokenized sentence
 ```
-![](assets/img_3.png)
+* ![](assets/img_3.png)
 
 ---
 
@@ -82,7 +82,7 @@ print(X[124])   # Example tokenized sentence
   * **Train (60%)**
   * **Validation (20%)**
   * **Test (20%)**
-![](assets/img_4.png)
+* ![](assets/img_4.png)
 
 ---
 
@@ -102,7 +102,7 @@ Sentence 1: "hello there"
 Sentence 2: "hi"
 Similarity: Similar
 ```
-![](assets/img_5.png)
+* ![](assets/img_5.png)
 
 📌 **Example Generated Triplets**
 
@@ -111,7 +111,7 @@ Anchor: "book a ticket"
 Positive: "reserve a seat"
 Negative: "play a song"
 ```
-![](assets/img_6.png)
+* ![](assets/img_6.png)
 
 ---
 
@@ -126,7 +126,7 @@ We built several **feature extractor networks**:
 5. (Additional variations)
 
 📌 **LSTM with Attention, Triplet Loss**
-![](train_cache/lstm_shallow_attention_v2_arch.png)
+* ![](train_cache/lstm_shallow_attention_v2_arch.png)
 
 ---
 
@@ -137,8 +137,8 @@ We built several **feature extractor networks**:
 * Training history cached in JSON.
 
 📊 **Training vs Validation Loss**
-![](assets/img_7.png)
-![](assets/img_8.png)
+* ![](assets/img_7.png)
+* ![](assets/img_8.png)
 
 
 ---
@@ -148,12 +148,12 @@ We built several **feature extractor networks**:
 After training, embeddings were extracted from the **feature extractor** and projected into 2D space using **t-SNE / UMAP**.
 
 📊 **t-SNE Visualization**
-![](latent_space/lstm_shallow_attention_v1%20latent%20space.png)
-![](latent_space/lstm_deep_v1%20latent%20space.png)
-![](latent_space/lstm_shallow_attention_v1%20latent%20space.png)
-![](latent_space/lstm_shallow_attention_v2%20latent%20space.png)
-![](latent_space/lstm_shallow_attention_v3%20latent%20space.png)
-![](latent_space/lstm_deep_attention_v1%20latent%20space.png)
+* ![](latent_space/lstm_shallow_attention_v1%20latent%20space.png)
+* ![](latent_space/lstm_deep_v1%20latent%20space.png)
+* ![](latent_space/lstm_shallow_attention_v1%20latent%20space.png)
+* ![](latent_space/lstm_shallow_attention_v2%20latent%20space.png)
+* ![](latent_space/lstm_shallow_attention_v3%20latent%20space.png)
+* ![](latent_space/lstm_deep_attention_v1%20latent%20space.png)
 
 📌 Different colors = different intent classes.
 This shows clustering quality of sentence embeddings.
@@ -166,7 +166,7 @@ This shows clustering quality of sentence embeddings.
 * Measured **accuracy** and **silhouette score**.
 
 📊 **KNN Accuracy per Model**
-![](assets/img_9.png)
+* ![](assets/img_9.png)
 
 
 ---

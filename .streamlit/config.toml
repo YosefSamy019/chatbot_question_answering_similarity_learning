@@ -1,0 +1,7 @@
+[theme]
+base = "dark"
+primaryColor = "#00BFA6"              # Teal-green accent (a bit softer than turquoise, still vibrant)
+backgroundColor = "#0E0E0E"           # Almost black, very clean
+secondaryBackgroundColor = "#1A1A1A"  # Smooth contrast for panels/cards
+textColor = "#E0E0E0"                 # Softer light gray for better readability
+font = "sans serif"                   # Clean, modern look

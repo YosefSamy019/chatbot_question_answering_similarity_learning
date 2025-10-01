@@ -1,0 +1,7 @@
+Model Name,Train Type,Metric,Silhouette Score Train,Silhouette Score Val,Silhouette Score Test,3-NN Accuracy Val,3-NN Accuracy Test
+lstm_shallow_v1,Siamese_Loss (Margin=1.0),euclidean,-0.12778352,-0.115895756,-0.14345388,0.630272952853598,0.6377171215880894
+lstm_deep_v1,Siamese_Loss (Margin=1.0),euclidean,-0.08539323,-0.08061592,-0.10159726,0.6377171215880894,0.6600496277915633
+lstm_shallow_attention_v1,Siamese_Loss (Margin=1.0),euclidean,-0.05560897,-0.08654804,-0.12569132,0.6277915632754343,0.6575682382133995
+lstm_deep_attention_v1,Siamese_Loss (Margin=1.0),euclidean,-0.16478704,-0.14225426,-0.14857006,0.6228287841191067,0.6327543424317618
+lstm_shallow_attention_v2,Triplet_Loss (Margin=1.0),euclidean,0.59483814,0.39162195,0.37762928,0.826302729528536,0.8064516129032258
+lstm_shallow_attention_v3,Triplet_Cosine_Loss (Margin=1.0),cosine,0.24323054,0.094296075,0.0051255263,0.7866004962779156,0.7741935483870968

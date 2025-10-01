@@ -52,10 +52,10 @@ data_df.head()
 * Removed duplicates and null entries.
 
 📊 **Distribution of Words per Pattern**
-![]("plots/pattern_word_count.png")
+![](assets/img_1.png)
 
 📊 **Tag Frequencies**
-![]("plots/tag_distribution.png")
+![](assets/img_2.png)
 
 ---
 
@@ -71,6 +71,7 @@ data_df.head()
 ```python
 print(X[124])   # Example tokenized sentence
 ```
+![](assets/img_3.png)
 
 ---
 
@@ -81,6 +82,7 @@ print(X[124])   # Example tokenized sentence
   * **Train (60%)**
   * **Validation (20%)**
   * **Test (20%)**
+![](assets/img_4.png)
 
 ---
 
@@ -100,6 +102,7 @@ Sentence 1: "hello there"
 Sentence 2: "hi"
 Similarity: Similar
 ```
+![](assets/img_5.png)
 
 📌 **Example Generated Triplets**
 
@@ -108,6 +111,7 @@ Anchor: "book a ticket"
 Positive: "reserve a seat"
 Negative: "play a song"
 ```
+![](assets/img_6.png)
 
 ---
 
@@ -121,8 +125,8 @@ We built several **feature extractor networks**:
 4. **Deep LSTM + Attention**
 5. (Additional variations)
 
-📌 **Architecture Visualization**
-![]("plots/model_architecture.png")
+📌 **LSTM with Attention, Triplet Loss**
+![](train_cache/lstm_shallow_attention_v2_arch.png)
 
 ---
 
@@ -133,10 +137,9 @@ We built several **feature extractor networks**:
 * Training history cached in JSON.
 
 📊 **Training vs Validation Loss**
-![]("plots/training_loss.png")
+![](assets/img_7.png)
+![](assets/img_8.png)
 
-📊 **Learning Rate Adjustments**
-![]("plots/lr_schedule.png")
 
 ---
 
@@ -145,10 +148,12 @@ We built several **feature extractor networks**:
 After training, embeddings were extracted from the **feature extractor** and projected into 2D space using **t-SNE / UMAP**.
 
 📊 **t-SNE Visualization**
-![]("plots/tsne_embeddings.png")
-
-📊 **UMAP Visualization**
-![]("plots/umap_embeddings.png")
+![](latent_space/lstm_shallow_attention_v1%20latent%20space.png)
+![](latent_space/lstm_deep_v1%20latent%20space.png)
+![](latent_space/lstm_shallow_attention_v1%20latent%20space.png)
+![](latent_space/lstm_shallow_attention_v2%20latent%20space.png)
+![](latent_space/lstm_shallow_attention_v3%20latent%20space.png)
+![](latent_space/lstm_deep_attention_v1%20latent%20space.png)
 
 📌 Different colors = different intent classes.
 This shows clustering quality of sentence embeddings.
@@ -161,10 +166,8 @@ This shows clustering quality of sentence embeddings.
 * Measured **accuracy** and **silhouette score**.
 
 📊 **KNN Accuracy per Model**
-![]("plots/knn_accuracy.png")
+![](assets/img_9.png)
 
-📊 **Silhouette Scores**
-![]("plots/silhouette_scores.png")
 
 ---
 
@@ -175,30 +178,12 @@ This shows clustering quality of sentence embeddings.
 * Deployments stored in:
 
 ```
-drive/MyDrive/chatbot_answerrr/deployments/
+deployments/
 ```
-
----
-
-## 📊 Results Summary
-
-| Model            | Loss Function | Accuracy | Silhouette Score |
-| ---------------- | ------------- | -------- | ---------------- |
-| LSTM Shallow     | Contrastive   | XX%      | YY               |
-| LSTM Deep        | Contrastive   | XX%      | YY               |
-| LSTM + Attention | Contrastive   | XX%      | YY               |
-
----
-
-## 📌 Next Steps
-
-* Experiment with **BERT embeddings** for stronger semantic representations.
-* Deploy model into a **real chatbot system** with REST API.
-* Extend dataset with more intents.
 
 ---
 
 ## 👨‍💻 Author
 
-Developed by **Youssef**
+Developed by **Youssef Samy**
 Machine Learning Engineer | AI Enthusiast

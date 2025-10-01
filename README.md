@@ -39,7 +39,7 @@ drive/MyDrive/chatbot_answerrr/
 data_df.head()
 ```
 
-![](assets/img.png)
+* ![](assets/img.png)
 
 ---
 
@@ -52,10 +52,10 @@ data_df.head()
 * Removed duplicates and null entries.
 
 📊 **Distribution of Words per Pattern**
-![](assets/img_1.png)
+* ![](assets/img_1.png)
 
 📊 **Tag Frequencies**
-![](assets/img_2.png)
+* ![](assets/img_2.png)
 
 ---
 

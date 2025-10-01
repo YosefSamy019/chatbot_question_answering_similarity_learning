@@ -145,7 +145,7 @@ We built several **feature extractor networks**:
 
 ### 8. Embedding Visualization
 
-After training, embeddings were extracted from the **feature extractor** and projected into 2D space using **t-SNE / UMAP**.
+After training, embeddings were extracted from the **feature extractor** and projected into 2D space using **t-SNE**.
 
 📊 **t-SNE Visualization**
 * ![](latent_space/lstm_shallow_attention_v1%20latent%20space.png)

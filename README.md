@@ -39,7 +39,7 @@ drive/MyDrive/chatbot_answerrr/
 data_df.head()
 ```
 
-![]("assets/img.png")
+![](assets/img.png)
 
 ---
 
